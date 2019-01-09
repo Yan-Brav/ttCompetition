@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:joda="http://www.joda.org/joda/time/tags"
+     xmlns:spring="http://www.springframework.org/tags"
+     version="2.0">
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <h1>User Listing</h1>
+
+    <c:if test="${not empty users}">
+        <table>
+            <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Login</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
+                    <td>${user.login}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
+
+
+</div>
